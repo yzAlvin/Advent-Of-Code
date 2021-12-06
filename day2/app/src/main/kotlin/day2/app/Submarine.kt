@@ -11,10 +11,27 @@ class Submarine {
         return horizontalPosition * depth
     }
 
+    fun pilot2(commands: String): Int {
+        val commandList = commands.split('\n').dropLast(1)
+        var aim = 0
+        var depth = 0
+        var horizontalPosition = 0
+        commandList.forEach {
+            val direction = it.split(" ")[0]
+            if (direction == "forward") {
+                horizontalPosition += parseCommand(it)
+                depth += aim * parseCommand(it)
+            } else {
+                aim += parseCommand(it)
+            }
+        }
+        return depth * horizontalPosition
+    }
+
     private fun parseCommand(command: String): Int {
         val splitCommand = command.split(" ")
         val direction = splitCommand[0]
-        val distance = splitCommand[1].toString().toInt()
+        val distance = splitCommand[1].toInt()
         return if (direction == "up") -distance else distance
     }
 }

@@ -12,6 +12,8 @@ fun main() {
     val fileContent = readFileDirectlyAsText("/Users/Alvin.Zhao/Projects/AoC/day2/app/src/main/resources/input")
     val resultProblem = sub.pilot(fileContent)
     println(resultProblem)
+    val resultProblem2 = sub.pilot2(fileContent)
+    println(resultProblem2)
 }
 
 fun readFileDirectlyAsText(fileName: String): String =

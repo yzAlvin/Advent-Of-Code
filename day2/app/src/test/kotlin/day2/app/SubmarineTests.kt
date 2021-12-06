@@ -59,4 +59,43 @@ forward 2
         var actual = sub.pilot(input)
         assertEquals(expected, actual)
     }
+
+    @Test fun pilot2ExampleReturns0() {
+        var input = """forward 5
+"""
+        var expected = 0
+        var actual = sub.pilot2(input)
+        assertEquals(expected, actual)
+    }
+
+    @Test fun pilot2ExampleReturns0AfterDown() {
+        var input = """forward 5
+down 5
+"""
+        var expected = 0
+        var actual = sub.pilot2(input)
+        assertEquals(expected, actual)
+    }
+
+    @Test fun pilot2ExampleReturns40AfterDownAndForward() {
+        var input = """forward 5
+down 5
+forward 8
+"""
+        var expected = 520
+        var actual = sub.pilot2(input)
+        assertEquals(expected, actual)
+    }
+    @Test fun pilot2ExampleReturns60AfterExample() {
+        var input = """forward 5
+down 5
+forward 8
+up 3
+down 8
+forward 2
+"""
+        var expected = 900
+        var actual = sub.pilot2(input)
+        assertEquals(expected, actual)
+    }
 }
