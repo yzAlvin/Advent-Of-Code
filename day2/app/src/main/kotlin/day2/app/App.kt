@@ -7,16 +7,7 @@ import java.io.File
 
 
 fun main() {
-    val input = """forward 5
-down 5
-forward 8
-up 3
-down 8
-forward 2
-"""
     val sub = Submarine()
-    val result = sub.pilot(input)
-    println((result))
 
     val fileContent = readFileDirectlyAsText("/Users/Alvin.Zhao/Projects/AoC/day2/app/src/main/resources/input")
     val resultProblem = sub.pilot(fileContent)

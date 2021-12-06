@@ -8,8 +8,9 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Disabled
 
-class MessageUtilsTest {
-    val sub = Submarine()
+class SubmarineTests {
+    private val sub = Submarine()
+
     @Test fun pilotReturns1() {
         var input = """forward 1
 down 1
@@ -18,6 +19,7 @@ down 1
         var actual = sub.pilot(input)
         assertEquals(expected, actual)
     }
+
     @Test fun pilotForward2Returns2() {
         var input = """forward 2
 down 1
@@ -26,6 +28,7 @@ down 1
         var actual = sub.pilot(input)
         assertEquals(expected, actual)
     }
+
     @Test fun pilotDown2Returns2() {
         var input = """forward 1
 down 2
@@ -34,6 +37,7 @@ down 2
         var actual = sub.pilot(input)
         assertEquals(expected, actual)
     }
+
     @Test fun pilotUp2ReturnsNeg2() {
         var input = """forward 1
 up 2
@@ -42,6 +46,7 @@ up 2
         var actual = sub.pilot(input)
         assertEquals(expected, actual)
     }
+
     @Test fun pilotExampleReturns150() {
         var input = """forward 5
 down 5

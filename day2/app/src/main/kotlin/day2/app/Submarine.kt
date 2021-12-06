@@ -3,12 +3,6 @@
  */
 package day2.app
 
-class MessageUtils {
-    companion object {
-        fun getMessage(): String = "Hello      World!"
-    }
-}
-
 class Submarine {
     fun pilot(commands: String): Int {
         val commandList = commands.split('\n').dropLast(1)
