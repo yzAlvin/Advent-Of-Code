@@ -11,7 +11,7 @@ class Submarine {
         return horizontalPosition * depth
     }
 
-    fun parseCommand(command: String): Int {
+    private fun parseCommand(command: String): Int {
         val splitCommand = command.split(" ")
         val direction = splitCommand[0]
         val distance = splitCommand[1].toString().toInt()

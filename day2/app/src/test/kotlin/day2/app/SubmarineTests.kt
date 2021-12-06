@@ -59,30 +59,4 @@ forward 2
         var actual = sub.pilot(input)
         assertEquals(expected, actual)
     }
-
-    @Test fun parseCommandForward1Returns1() {
-        val command = "forward 1"
-        val expected = sub.parseCommand(command)
-        val actual = 1
-        assertEquals(expected, actual)
-    }
-    @Test fun parseCommandForward3Returns3() {
-        val command = "forward 3"
-        val expected = sub.parseCommand(command)
-        val actual = 3
-        assertEquals(expected, actual)
-    }
-    @Test fun parseCommandUp3ReturnsNeg3() {
-        val command = "up 3"
-        val expected = sub.parseCommand(command)
-        val actual = -3
-        assertEquals(expected, actual)
-    }
-    @Test fun parseCommandDown3Returns3() {
-        val sub = Submarine()
-        val command = "down 3"
-        val expected = sub.parseCommand(command)
-        val actual = 3
-        assertEquals(expected, actual)
-    }
 }
