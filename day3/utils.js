@@ -5,6 +5,12 @@ Array.prototype.count = function (searchVal) {
   return this.filter((x) => x === searchVal).length;
 };
 
+const normaliseInput = (input) =>
+  input
+    .split("\n")
+    .filter((r) => r)
+    .map((r) => r.split("").map((d) => parseInt(d)));
+
 const powerConsumption = (input) => {
   const inputs = normaliseInput(input);
   const transposed = transpose(inputs);
@@ -17,12 +23,6 @@ const powerConsumption = (input) => {
     .join("");
   return parseInt(gammaRate, 2) * parseInt(epsilonRate, 2);
 };
-
-const normaliseInput = (input) =>
-  input
-    .split("\n")
-    .filter((r) => r)
-    .map((r) => r.split("").map((d) => parseInt(d)));
 
 const oxygenGeneratorRating = (input) => {
   const inputs = normaliseInput(input);
